@@ -1,0 +1,4 @@
+# ninja log v5
+0	427	1661354295198321250	CMakeFiles/exe.dir/01-helloWindow.cc.o	4b3f44326a902812
+0	1005	1661354295774277151	CMakeFiles/exe.dir/home/eton/220823-learnOpenGl/10-srcs/demos-src/libs/glad.c.o	e01f0c826e82c1ba
+1005	1133	1661354295902267352	exe	aec8d849c6ac9d3a

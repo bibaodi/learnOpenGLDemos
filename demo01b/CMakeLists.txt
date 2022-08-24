@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.0...3.20 FATAL_ERROR)
+
+project(GLFW VERSION 3.3.8 LANGUAGES C)
+
+if (POLICY CMP0054)
+    cmake_policy(SET CMP0054 NEW)
+endif()
+
+if (POLICY CMP0069)
+    cmake_policy(SET CMP0069 NEW)
+endif()
+
+if (POLICY CMP0077)
+    cmake_policy(SET CMP0077 NEW)
+endif()
+
+include(GNUInstallDirs)
+include(CMakeDependentOption)
+
+link_libraries(glfw)
+
+include_directories("${GLFW_SOURCE_DIR}/deps")
+
+if (MATH_LIBRARY)
+    link_libraries("${MATH_LIBRARY}")
+endif()
+
+
+if (${CMAKE_VERSION} VERSION_EQUAL "3.1.0" OR
+    ${CMAKE_VERSION} VERSION_GREATER "3.1.0")
+    set(CMAKE_C_STANDARD 99)
+else()
+    # Remove this fallback when removing support for CMake version less than 3.1
+    add_compile_options("$<$<C_COMPILER_ID:AppleClang>:-std=c99>"
+                        "$<$<C_COMPILER_ID:Clang>:-std=c99>"
+                        "$<$<C_COMPILER_ID:GNU>:-std=c99>")
+
+endif()
+
+add_executable(simple simple.c)
+
+
