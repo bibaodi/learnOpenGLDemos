@@ -31,6 +31,6 @@ set (CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -ldl")
 #add_library(GLAD "${CMAKE_SOURCE_DIR}/../libs/glad.c")
 #set(LIBS ${LIBS} GLAD)
 
-add_executable(exe 01-helloWindow.cc "${CMAKE_SOURCE_DIR}/../libs/glad.c")
-target_link_libraries(exe ${LIBS})
+add_executable(${PROJECT_NAME} 01-helloWindow.cc "${CMAKE_SOURCE_DIR}/../libs/glad.c")
+target_link_libraries(${PROJECT_NAME}  ${LIBS})
 
