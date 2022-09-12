@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apt install cmake ninja-build
+
+## for glfw build
+sudo apt install xorg-dev
+
+
