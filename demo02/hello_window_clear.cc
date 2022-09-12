@@ -47,6 +47,7 @@ int main()
     // -----------
     while (!glfwWindowShouldClose(window))
     {
+        std::cout << "Loop.Begin\t" ;
         // input
         // -----
         processInput(window);
@@ -60,6 +61,7 @@ int main()
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
+         std::cout << "Loop.End" << std::endl;
     }
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
